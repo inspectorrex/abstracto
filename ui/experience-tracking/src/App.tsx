@@ -7,7 +7,7 @@ function App() {
     const serverId: bigint = window.serverId
     return (
         <>
-            <div className="bg-gray-900 bg-cover min-h-screen">
+            <div className="bg-slate-950 bg-cover min-h-screen">
                 <Leaderboard serverId={serverId} />
             </div>
         </>

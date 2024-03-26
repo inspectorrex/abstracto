@@ -31,10 +31,10 @@ export const ExperienceConfigDisplay = ({ serverId }: { serverId: bigint }) => {
     return (
         <>
             {!hasError ?
-                <div className="bg-gray-800 p-4 w-11/12 mx-auto rounded-lg">
-                    <div className="w-full flex justify-between items-center p-2 px-4">
-                        <h2 className="text-xl font-extrabold leading-none tracking-tight text-gray-100">Role Config</h2>
-                        <button onClick={toggleOpen}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className={`w-6 h-6 stroke-white stroke-2 duration-300 ${isOpen ? "rotate-180" : ""}`}>
+                <div className="bg-gray-900 p-2 lg:p-4 w-11/12 mx-auto rounded-lg">
+                    <div onClick={toggleOpen} className="w-full flex justify-between items-center p-2 px-4">
+                        <h2 className="text-xl lg:text-2xl font-extrabold leading-none tracking-tight text-gray-100">Role Config</h2>
+                        <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className={`w-6 h-6 stroke-white stroke-2 duration-300 ${isOpen ? "rotate-180" : ""}`}>
                             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
                         </button>
@@ -46,8 +46,8 @@ export const ExperienceConfigDisplay = ({ serverId }: { serverId: bigint }) => {
                                     <p className="">
                                         <RoleDisplay role={role.role} />
                                     </p>
-                                    <p className="font-bold text-gray-200">
-                                        {role.level}
+                                    <p className="font-bold text-lg text-gray-200">
+                                        Level {role.level}
                                     </p>
                                 </div>)}
                         </div>

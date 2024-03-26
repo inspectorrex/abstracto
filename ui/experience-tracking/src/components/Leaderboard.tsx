@@ -61,43 +61,28 @@ export function Leaderboard({ serverId }: { serverId: bigint }) {
                             alt="Banner"
                             className="absolute inset-0 w-full h-full object-cover" /> : ''}
                         <div
-                            className="min-h-[150px] relative z-50 h-full max-w-6xl mx-auto flex flex-row justify-center items-center text-center text-white p-6">
+                            className="min-h-36 relative z-50 h-full max-w-6xl mx-auto flex flex-row justify-center items-center text-center text-white p-6">
                             {guildInfo.iconUrl !== null ? <img
-                                src={guildInfo.iconUrl + "?size=512"}
+                                src={"https://cdn.discordapp.com/icons/297910194841583616/14226616a2d7b9be0de271bb58c28ae0.webp?size=96"}
                                 alt="Icon"
-                                className="w-24" />
+                                className="lg:w-24 w-20 aspect-square object-cover absolute -bottom-10 rounded-xl border-4 border-slate-700" />
                                 : ''}
                             <h1 className="text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-white">{'Leaderboard for ' + guildInfo.name}</h1>
                         </div>
-
                     </div>
-                    <div className="flex flex-col-reverse lg:flex-row">
-                        <div className="text-sm text-left lg:w-3/4 p-8">
-                            <table className="w-full text-gray-400">
-                                <thead
-                                    className="text-xs uppercase bg-gray-800 text-gray-400">
-                                    <tr>
-                                        <th scope="col" className="px-6 py-3 w-1/3">
-                                            Member
-                                        </th>
-                                        <th scope="col" className="px-6 py-3 w-1/6 text-center">
-                                            Experience
-                                        </th>
-                                        <th scope="col" className="px-6 py-3 w-1/6 text-center">
-                                            Messages
-                                        </th>
-                                        <th scope="col" className="px-6 py-3 w-1/6 text-center">
-                                            Level
-                                        </th>
-                                        <th scope="col" className="px-6 py-3 w-1/3 text-center">
-                                            Role
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {members.map(member => <LeaderboardEntry key={member.id} member={member} />)}
-                                </tbody>
-                            </table>
+                    <div className="flex flex-col-reverse lg:flex-row w-full lg:w-11/12 mx-auto mt-12">
+                        <div className="text-sm text-left lg:w-3/4 w-11/12 mx-auto mt-8 lg:p-8 p-4 rounded-xl bg-slate-900">
+                            <h2 className="text-xl lg:text-3xl font-extrabold leading-none tracking-tight text-gray-100 p-4 pt-0">Leaderboard</h2>
+                            <div className="flex p-4 rounded-xl text-slate-200 font-semibold text-center text-xs lg:text-base">
+                                <p className="w-1/6">Rank</p>
+                                <p className="w-3/6 text-start">Member</p>
+                                <p className="w-1/5">Experience</p>
+                                <p className="w-1/5">Messages</p>
+                                <p className="w-1/5">Level</p>
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                {members.map(member => <LeaderboardEntry key={member.id} member={member} />)}
+                            </div>
                             {hasMore ? loadMoreButton : ''}
                         </div>
                         <div className="lg:w-1/4 mt-8">
